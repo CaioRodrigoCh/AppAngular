@@ -1,0 +1,13 @@
+<!-- Ele vai passar pelo método getcolor, e irá me dizer se o background é vermelhor ou verde
+de acordo com o que ele pegar do método serverStatus quando passar pelo constructor na function Math-->
+
+<p [ngStyle]="{backgroundColor: getColor()}"
+    [ngClass]="{online: serverStatus === 'online'}"
+> O servidor com o ID {{ serverId }} e o status é {{ getServerStatus() }} </p>
+
+
+<!--ngClass é a mesma coisa de fazer isso aqui -->
+<!-- <div class="online">
+    <hr>
+    <p>TESTEEEEEE</p>
+</div> -->

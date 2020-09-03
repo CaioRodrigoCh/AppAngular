@@ -1,0 +1,30 @@
+<label>Nome do Servidor</label>
+<!-- Aqui será enviado o input e enviado ao método onUpdateServerName com a variávei event -->
+<!-- <input type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"
+> -->
+
+<input type="text"
+class="form-control"
+[(ngModel)]="serverName"
+>
+<!-- <p>{{ serverName }}</p> -->
+<br>
+<button class="btn btn-primary" 
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">Adicionar servidor</button>
+<hr>
+
+<!-- Essa interpolação sempre vai estar no ts, uma variável OU um método. ambos na parte da classe -->
+<!-- ngIf com if ou else na rendenização de componentes -->
+<p class="status" *ngIf="serverstatus; else noServer"> o servidor {{ serverName }} foi criado!</p>
+<ng-template #noServer>
+    <p class="warning">Nenhum servidor foi criado!</p>
+</ng-template>
+
+<hr>
+<app-server *ngFor="let server of servers"></app-server>
+
+
+
